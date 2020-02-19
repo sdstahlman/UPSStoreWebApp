@@ -3,39 +3,63 @@
     Reset stylesheet to make sure all elements start
     from a common default regardless of browser
 */
-p, a, ul, li {
+/*p, a, ul, li {
     margin: 0;
     padding: 0;
     border: 0;
     outline: 0;
     font-size: 100%;
     background: transparent;
-}
+}*/
 
 nav
 {
     width:100%;
     margin: 20px 0;
-    float: left;
+
+
 }
 
-nav ul
-{
+
+nav ul {
     width: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+    background-color: #0087a4;
 }
+
+nav ul #navlogo
+{
+    float: left;
+    width: 32px;
+    height: 18px;
+    padding: 10px;
+    margin: 1%;
+}
+
+
 
 nav ul li
 {
     width: 20%;
+    float: left;
 }
 
 nav ul li a
 {
     display: block;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
     width: 100%;
+    color: #fff;
+}
+
+.current
+{
+    background-color: #008198;
 }
 
 body

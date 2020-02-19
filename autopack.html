@@ -11,22 +11,34 @@
 <body>
     <header>
         <!--
-                Navigation Bar
+            Navigation Bar
 
-                class is set to "Current" for which html page is currently displayed
-             -->
-        <div class="navbar">
-            <a href="index.html">Home</a>
-            <a href="autopack.html"  class="current">AutoPack</a>
-            <a href="autoquote.html">AutoQuote</a>
-            <a href="amazoncarton.html">Amazon Carton</a>
-            <a href="contact.html">Contact Us</a>
-        </div>
+            class is set to "Current" for which html page is currently displayed
+         -->
+        <nav>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="autopack.html" class="current">AutoPack</a>
+                </li>
+                <li>
+                    <a href="autoquote.html">AutoQuote</a>
+                </li>
+                <li>
+                    <a href="amazoncarton.html">Amazon Carton</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
 
 <main>
-    <form action="https://webpages.uncc.edu/sstahlm1/Project/autopack.html" method="POST">
+    <form id="itemInfo" action="https://webpages.uncc.edu/sstahlm1/Project/autopackcomplete.html" method="POST" target="_self">
         <p>
             <label for="weight">Weight: </label>
             <input type="number" id="weight" name="weight" placeholder="Weight in Pounds" required>
@@ -71,8 +83,20 @@
             <input type="radio" name="heightHS" value="soft" id="softH" required>
             <label for="softH">Soft</label>
         </p>-->
+        <p>
+            <input type="radio" name="pack_type" value="drop" id="drop" required>
+            <label for="drop">Drop-In</label>
+        </p>
+        <p>
+            <input type="radio" name="pack_type" value="std" id="std" required>
+            <label for="std">Standard</label>
+        </p>
+        <p>
+            <input type="radio" name="pack_type" value="frag" id="frag" required>
+            <label for="frag">Fragile</label>
+        </p>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" id="packSubmit">
 
     </form>
 </main>
