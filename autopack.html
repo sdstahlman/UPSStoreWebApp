@@ -38,51 +38,41 @@
 
 
 <main>
+    <!--
+        Form for item info
+        Form works with autopack.js to determine the best box to use for the given item
+    -->
+
     <form id="itemInfo" action="https://webpages.uncc.edu/sstahlm1/Project/autopackcomplete.html" method="POST" target="_self">
+        <!-- Weight -->
         <p>
             <label for="weight">Weight: </label>
             <input type="number" id="weight" name="weight" placeholder="Weight in Pounds" required>
         </p>
+
+        <!-- Length -->
         <p>
             <label for="lengthDim">Length: </label>
             <input type="number" id="lengthDim" name="lengthDim" placeholder="Length of Item" required>
-        <!--</p>
-        <p>
-            <input type="radio" name="lengthHS" value="hard" id="hardL" required>
-            <label for="hardL">Hard</label>
         </p>
-        <p>
-            <input type="radio" name="lengthHS" value="soft" id="softL">
-            <label for="softL">Soft</label>
-        </p>-->
 
-
+        <!-- Width -->
         <p>
             <label for="widthDim">Width: </label>
             <input type="number" id="widthDim" name="widthDim" placeholder="Width of Item" required>
         </p>
-        <!--<p>
-            <input type="radio" name="widthHS" value="hard" id="hardW" required>
-            <label for="hardW">Hard</label>
-        </p>
-        <p>
-            <input type="radio" name="widthHS" value="soft" id="softW" required>
-            <label for="softW">Soft</label>
-        </p>-->
 
-
+        <!-- Height -->
         <p>
             <label for="heightDim">Height: </label>
             <input type="number" id="heightDim" name="heightDim" placeholder="Height of Item" required>
         </p>
-        <!--<p>
-            <input type="radio" name="heightHS" value="hard" id="hardH" required>
-            <label for="hardH">Hard</label>
-        </p>
-        <p>
-            <input type="radio" name="heightHS" value="soft" id="softH" required>
-            <label for="softH">Soft</label>
-        </p>-->
+
+        <!--
+            Selector for pack type
+            Determines what materials are needed for the item
+            Different pack types need extra room in the box to account for materials
+         -->
         <p>
             <input type="radio" name="pack_type" value="drop" id="drop" required>
             <label for="drop">Drop-In</label>
@@ -96,7 +86,8 @@
             <label for="frag">Fragile</label>
         </p>
 
-        <input type="submit" value="Submit" id="packSubmit">
+        <!-- Submit Button -->
+        <input type="submit" value="Submit" id="pack_submit">
 
     </form>
 </main>
