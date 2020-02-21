@@ -3,28 +3,45 @@
 var $ = function (id) { return document.getElementById(id); };
 
 
+window.onload = function () {
+    document.getElementById("itemInfo").addEventListener('submit', function(e) {
+        e.preventDefault();
+        if(findBox()) {
+            //window.location.href = 'https://webpages.uncc.edu/sstahlm1/Project/autopackcomplete.html';
+        }
+    });
+};
+
+
+
 var findBox = function() {
     var itemInfo = $("itemInfo");
-    var length = itemInfo.lengthDim;
-    var height = itemInfo.heightDim;
-    var weight = itemInfo.weight;
-    var width = itemInfo.widthDim;
+    var length = itemInfo.lengthDim.value;
+    var height = itemInfo.heightDim.value;
+    var weight = itemInfo.weight.value;
+    var width = itemInfo.widthDim.value;
     var pack_type = $("pack_type").value;
 
-    length = Math.ceil(parseFloat(length));
-    height = Math.ceil(parseFloat(height));
-    width = Math.ceil(parseFloat(width));
+    //Convert length inputs to floats in order to do functions later
+    length = parseFloat(length);
+    height = parseFloat(height);
+    width = parseFloat(width);
+
+    //Round weight up to the nearest whole pound
+    //NOTE: UPS Requires all weights to round UP to a whole pound
     weight = Math.ceil(parseFloat(weight));
 
+    //Adjusted lengths to factor in packaging materials
     var length_adj;
     var height_adj;
     var width_adj;
 
-
+    //Determines the final measurements of the item after packaging materials
     if(pack_type === "frag") {
-        length_adj = length + 4;
-        height_adj = height + 4;
-        width_adj = width + 4;
+        //Adds 1.5 inches to each side for bubble wrap / foam0
+        length_adj = length + 3;
+        height_adj = height + 3;
+        width_adj = width + 3;
     }
     else if(pack_type === "std") {
         length_adj = length;
@@ -38,7 +55,7 @@ var findBox = function() {
 
     }
 
-
+    //Array of adjusted item dimensions
     var dim = [length_adj, width_adj, height_adj];
 
     /*
@@ -62,19 +79,178 @@ var findBox = function() {
 
     if(too_large && too_heavy) {
         window.alert("Item is too large and heavy to ship Parcel.\n\nSee manager for Freight options.");
+        return false;
     }
     else if(too_large) {
         window.alert("Item is too large to ship Parcel.\n\nSee manager for Freight options.");
+        return false;
 
     }
     else if(too_heavy) {
         window.alert("Item is too heavy to ship Parcel.\n\nSee manager for Freight options.");
+        return false;
     }
+
+    var box_size;
+    var price_box;
+    var price_service;
+    var price_mats;
+    var price_total;
+
+    /*
+        IF block to determine the best box to use
+
+        Goes in order from smallest to largest based
+     */
+
+    if(dim[0] <= 6 ) {
+        if(dim[2] <= 6 ) {
+            box_size = "6 x 6 x 6";
+        }
+        else if(dim[2] <= 50) {
+            box_size = "6 x 6 x 50";
+        }
+    }
+    else if(dim[0] <= 8 ) {
+        if(dim[1] <= 8) {
+            if(dim[2] <= 8 ) {
+                box_size = "8 x 8 x 8";
+            }
+            else if(dim[2] <= 42) {
+                box_size = "8 x 8 x 42";
+            }
+        }
+    }
+    else if(dim[0] <= 10 ) {
+        if(dim[1] <= 10) {
+            if(dim[2] <= 10 ) {
+                box_size = "10 x 10 x 10";
+            }
+            else if(dim[2] <= 50) {
+                box_size = "10 x 10 x 50";
+            }
+        }
+    }
+    else if(dim[0] <= 11.75 ) {
+        if(dim[1] <= 8.75) {
+            if(dim[2] <= 4.75 ) {
+                box_size = "11.75 x 8.75 x 4.75";
+            }
+        }
+    }
+    else if(dim[0] <= 12 ) {
+        if(dim[1] <= 8) {
+            if(dim[2] <= 8) {
+                box_size = "12 x 8 x 8";
+            }
+        }
+        else if(dim[1] <= 9) {
+            if(dim[2] <= 3) {
+                box_size = "12 x 9 x 3";
+            }
+        }
+        else if(dim[1] <= 12) {
+            if(dim[2] <= 6 ) {
+                box_size = "12 x 12 x 6";
+            }
+            else if(dim[2] <= 12) {
+                box_size = "12 x 12 x 12";
+            }
+        }
+    }
+    else if(dim[0] <= 13 ) {
+        if(dim[1] <= 11 ) {
+            if(dim[2] <= 5 ) {
+                box_size = "13 x 11 x 5";
+            }
+        }
+    }
+    else if(dim[0] <= 14 ) {
+        if(dim[1] <= 14 ) {
+            if(dim[2] <= 14 ) {
+                box_size = "14 x 14 x 14";
+            }
+            else if(dim[2] <= 14 ) {
+                box_size = "14 x 14 x 47";
+            }
+        }
+    }
+    else if(dim[0] <= 15 ) {
+        if(dim[1] <= 12) {
+            if(dim[2] <= 10 ) {
+                box_size = "15 x 12 x 10";
+            }
+        }
+    }
+    else if(dim[0] <= 16 ) {
+        if(dim[1] <= 12 ) {
+            if(dim[2] <= 12 ) {
+                box_size = "16 x 12 x 12";
+            }
+        }
+        else if(dim[1] <= 16 ) {
+            if(dim[2] <= 4 ) {
+                box_size = "16 x 16 x 4";
+            }
+            else if(dim[2] <= 16 ) {
+                box_size = "16 x 16 x 16";
+            }
+        }
+    }
+    else if(dim[0] <= 17 ) {
+        if(dim[1] <= 11 ) {
+            if(dim[2] <= 8 ) {
+                box_size = "17 x 11 x 8";
+            }
+        }
+        if(dim[1] <= 17 ) {
+            if(dim[2] <= 8 ) {
+                box_size = "17 x 17 x 8";
+            }
+        }
+    }
+    else if(dim[0] <= 18 ) {
+
+    }
+    else if(dim[0] <= 18.75 ) {
+
+    }
+    else if(dim[0] <= 20 ) {
+
+    }
+    else if(dim[0] <= 22 ) {
+
+    }
+    else if(dim[0] <= 24 ) {
+
+    }
+    else if(dim[0] <= 25 ) {
+
+    }
+    else if(dim[0] <= 26 ) {
+
+    }
+    else if(dim[0] <= 30 ) {
+
+    }
+    else if(dim[0] <= 36 ) {
+
+    }
+    else if(dim[0] <= 38 ) {
+
+    }
+    else if(dim[0] <= 44 ) {
+
+    }
+    else if(dim[0] <= 52 ) {
+
+    }
+
+    window.alert("Box size needed: \n" + box_size);
+
+    return true;
 
 }
 
 
 
-window.onload = function () {
-    $("pack_submit").onclick = findBox;
-};

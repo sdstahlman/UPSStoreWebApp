@@ -2,99 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ToolBOX</title>
     <!--Stylesheet -->
     <link rel="stylesheet" type="text/css" href="StoreToolBOX.css">
     <!-- JavaScript -->
-    <script src="autopack.js"></script>
+
 </head>
 <body>
-    <header>
-        <!--
-            Navigation Bar
+    <div class="container">
+        <header>
+            <!--
+                Navigation Bar
 
-            class is set to "Current" for which html page is currently displayed
-         -->
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="autopack.html" class="current">AutoPack</a>
-                </li>
-                <li>
-                    <a href="autoquote.html">AutoQuote</a>
-                </li>
-                <li>
-                    <a href="amazoncarton.html">Amazon Carton</a>
-                </li>
-                <li>
-                    <a href="contact.html">Contact Us</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+                class is set to "Current" for which html page is currently displayed
+             -->
+            <nav>
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="autopack.html" class="current">AutoPack</a>
+                    </li>
+                    <li>
+                        <a href="autoquote.html">AutoQuote</a>
+                    </li>
+                    <li>
+                        <a href="amazoncarton.html">Amazon Carton</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
 
-<main>
-    <!--
-        Form for item info
-        Form works with autopack.js to determine the best box to use for the given item
-    -->
+        <main>
+            <!--
+                Form for item info
+                Form works with autopack.js to determine the best box to use for the given item
+            -->
 
-    <form id="itemInfo" action="https://webpages.uncc.edu/sstahlm1/Project/autopackcomplete.html" method="POST" target="_self">
-        <!-- Weight -->
-        <p>
-            <label for="weight">Weight: </label>
-            <input type="number" id="weight" name="weight" placeholder="Weight in Pounds" required>
-        </p>
+            <form id="itemInfo">
+                <!-- Weight -->
+                <p>
+                    <label for="weight">Weight: </label>
+                    <input type="number" id="weight" name="weight" placeholder="Weight in Pounds" required>
+                </p>
 
-        <!-- Length -->
-        <p>
-            <label for="lengthDim">Length: </label>
-            <input type="number" id="lengthDim" name="lengthDim" placeholder="Length of Item" required>
-        </p>
+                <!-- Length -->
+                <p>
+                    <label for="lengthDim">Length: </label>
+                    <input type="number" id="lengthDim" name="lengthDim" placeholder="Length of Item" required>
+                </p>
 
-        <!-- Width -->
-        <p>
-            <label for="widthDim">Width: </label>
-            <input type="number" id="widthDim" name="widthDim" placeholder="Width of Item" required>
-        </p>
+                <!-- Width -->
+                <p>
+                    <label for="widthDim">Width: </label>
+                    <input type="number" id="widthDim" name="widthDim" placeholder="Width of Item" required>
+                </p>
 
-        <!-- Height -->
-        <p>
-            <label for="heightDim">Height: </label>
-            <input type="number" id="heightDim" name="heightDim" placeholder="Height of Item" required>
-        </p>
+                <!-- Height -->
+                <p>
+                    <label for="heightDim">Height: </label>
+                    <input type="number" id="heightDim" name="heightDim" placeholder="Height of Item" required>
+                </p>
 
-        <!--
-            Selector for pack type
-            Determines what materials are needed for the item
-            Different pack types need extra room in the box to account for materials
-         -->
-        <p>
-            <input type="radio" name="pack_type" value="drop" id="drop" required>
-            <label for="drop">Drop-In</label>
-        </p>
-        <p>
-            <input type="radio" name="pack_type" value="std" id="std" required>
-            <label for="std">Standard</label>
-        </p>
-        <p>
-            <input type="radio" name="pack_type" value="frag" id="frag" required>
-            <label for="frag">Fragile</label>
-        </p>
+                <!--
+                    Selector for pack type
+                    Determines what materials are needed for the item
+                    Different pack types need extra room in the box to account for materials
+                 -->
+                <label for="pack_type">Choose Pack Type:</label>
+                <select id="pack_type" required>
+                    <option value="drop">Drop-In</option>
+                    <option value="std">Standard</option>
+                    <option value="frag">Fragile</option>
+                </select>
 
-        <!-- Submit Button -->
-        <input type="submit" value="Submit" id="pack_submit">
+                <!-- Submit Button -->
+                <input type="submit" value="Submit" id="pack_submit">
 
-    </form>
-</main>
+            </form>
+        </main>
 
-    <footer>
-        <p>This project was made by Scott Stahlman with intended use for UPS Store 2078 in North Carolina.</p>
-        <p>For help, bug reporting, ect; please contact Scott at <a href="mailto: sdstahlman@gmail.com">sdstahlman@gmail.com</a></p>
-    </footer>
+        <footer>
+            <p>This project was made by Scott Stahlman with intended use for UPS Store 2078 in North Carolina.</p>
+            <p>For help, bug reporting, ect; please contact Scott at <a href="mailto: sdstahlman@gmail.com">sdstahlman@gmail.com</a></p>
+        </footer>
+    </div>
+    <script src="autopack.js"></script>
 </body>
 </html>
