@@ -5,15 +5,19 @@ html, body{
 
 nav
 {
-    width:100%;
+    width: 100%;
     margin: 20px 0;
     display: flex;
-
+    overflow: auto;
 }
 
+nav a:hover
+{
+    background-color: #008198;
+}
 
 nav ul {
-    width: 200%;
+    width: 100%;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -24,7 +28,7 @@ nav ul {
 
 nav ul li
 {
-    width: 15%;
+    width: 16.66%;
     float: left;
 }
 
@@ -36,6 +40,7 @@ nav ul li a
     text-decoration: none;
     width: 100%;
     color: #fff;
+    font-size: 20px;
 }
 
 nav ul li a img
@@ -53,7 +58,12 @@ body
 {
     font-family: "arial", serif;
     width: 100%;
+    background-color: aqua;
 
+}
+
+footer
+{
 
 }
 
@@ -63,11 +73,14 @@ body
     margin-right: auto;
     margin-left: auto;
     max-width: 1200px;
+    background-color: white;
+    height: 100%;
 }
 
 @media (max-width: 767px) {
     .container {
         padding-right: 0;
         padding-left: 0;
+
     }
 }
