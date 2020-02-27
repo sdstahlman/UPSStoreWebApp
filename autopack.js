@@ -91,7 +91,7 @@ var findBox = function() {
         return false;
     }
 
-    var box_size;
+    var box_size = "na";
     var price_box;
     var price_service;
     var price_mats;
@@ -401,8 +401,13 @@ var findBox = function() {
         }
     }
 
+    if(box_size === "na") {
+        window.alert("Unable to find box size.\nContact a manager.");
+    }
+    else {
+        window.alert("Box size needed: \n" + box_size);
+    }
 
-    window.alert("Box size needed: \n" + box_size);
 
     return true;
 
