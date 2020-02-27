@@ -2,18 +2,6 @@ html, body{
     padding: 0;
     margin: 0;
 }
-/*
-    Reset stylesheet to make sure all elements start
-    from a common default regardless of browser
-*/
-/*p, a, ul, li {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    background: transparent;
-}*/
 
 nav
 {
@@ -25,7 +13,7 @@ nav
 
 
 nav ul {
-    width: 100%;
+    width: 200%;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -33,17 +21,10 @@ nav ul {
     background-color: #0087a4;
 }
 
-nav ul #navlogo
-{
-    max-height: 100px;
-    max-width: 100px;
-}
-
-
 
 nav ul li
 {
-    width: 20%;
+    width: 15%;
     float: left;
 }
 
@@ -55,6 +36,12 @@ nav ul li a
     text-decoration: none;
     width: 100%;
     color: #fff;
+}
+
+nav ul li a img
+{
+    height: auto;
+    max-width: 100px;
 }
 
 .current
@@ -75,7 +62,7 @@ body
     padding-left: 5vw;
     margin-right: auto;
     margin-left: auto;
-    max-width: 900px;
+    max-width: 1200px;
 }
 
 @media (max-width: 767px) {
