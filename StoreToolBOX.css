@@ -67,6 +67,14 @@ footer
 
 }
 
+.storeAddress {
+    text-align: left;
+}
+
+.designContact {
+    text-align: right;
+}
+
 .container {
     padding-right: 5vw;
     padding-left: 5vw;
