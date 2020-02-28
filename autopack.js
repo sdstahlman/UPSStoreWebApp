@@ -97,282 +97,388 @@ var findBox = function() {
     var price_mats;
     var price_total;
 
-    /*
-        IF block to determine the best box to use
 
-        Goes in order from smallest to largest based
-     */
-    var i = 0;
-    while(i < 3) {
-        if (dim[0] <= 6) {
-            if (dim[2] <= 6) {
-                box_size = "6 x 6 x 6";
-            } else if (dim[2] <= 50) {
-                box_size = "6 x 6 x 50";
-            }
-        } else if (dim[0] <= 8) {
-            if (dim[1] <= 8) {
-                if (dim[2] <= 8) {
-                    box_size = "8 x 8 x 8";
-                } else if (dim[2] <= 42) {
-                    box_size = "8 x 8 x 42";
-                }
-            }
-        } else if (dim[0] <= 10) {
-            if (dim[1] <= 10) {
-                if (dim[2] <= 10) {
-                    box_size = "10 x 10 x 10";
-                } else if (dim[2] <= 50) {
-                    box_size = "10 x 10 x 50";
-                }
-            }
-        } else if (dim[0] <= 11.75) {
-            if (dim[1] <= 8.75) {
-                if (dim[2] <= 4.75) {
-                    box_size = "11.75 x 8.75 x 4.75";
-                }
-            }
-        } else if (dim[0] <= 12) {
-            if (dim[1] <= 8) {
-                if (dim[2] <= 8) {
-                    box_size = "12 x 8 x 8";
-                }
-            } else if (dim[1] <= 9) {
-                if (dim[2] <= 3) {
-                    box_size = "12 x 9 x 3";
-                }
-            } else if (dim[1] <= 12) {
-                if (dim[2] <= 6) {
-                    box_size = "12 x 12 x 6";
-                } else if (dim[2] <= 12) {
-                    box_size = "12 x 12 x 12";
-                }
-            }
-        } else if (dim[0] <= 13) {
-            if (dim[1] <= 11) {
-                if (dim[2] <= 5) {
-                    box_size = "13 x 11 x 5";
-                }
-            }
-        } else if (dim[0] <= 14) {
-            if (dim[1] <= 14) {
-                if (dim[2] <= 14) {
-                    box_size = "14 x 14 x 14";
-                } else if (dim[2] <= 14) {
-                    box_size = "14 x 14 x 47";
-                }
-            }
-        } else if (dim[0] <= 15) {
-            if (dim[1] <= 12) {
-                if (dim[2] <= 10) {
-                    box_size = "15 x 12 x 10";
-                }
-            }
-        } else if (dim[0] <= 16) {
-            if (dim[1] <= 12) {
-                if (dim[2] <= 12) {
-                    box_size = "16 x 12 x 12";
-                }
-            } else if (dim[1] <= 16) {
-                if (dim[2] <= 4) {
-                    box_size = "16 x 16 x 4";
-                } else if (dim[2] <= 16) {
-                    box_size = "16 x 16 x 16";
-                }
-            }
-        } else if (dim[0] <= 17) {
-            if (dim[1] <= 11) {
-                if (dim[2] <= 8) {
-                    box_size = "17 x 11 x 8";
-                }
-            }
-            if (dim[1] <= 17) {
-                if (dim[2] <= 8) {
-                    box_size = "17 x 17 x 8";
-                }
-            }
-        } else if (dim[0] <= 18) {
-            if (dim[1] <= 12) {
-                if (dim[2] <= 12) {
-                    box_size = "18 x 12 x 12";
-                }
-            } else if (dim[1] <= 16) {
-                if (dim[2] <= 14) {
-                    box_size = "18 x 16 x 14";
-                }
-            } else if (dim[1] <= 18) {
-                if (dim[2] <= 12) {
-                    box_size = "18 x 18 x 12";
-                } else if (dim[2] <= 18) {
-                    box_size = "18 x 18 x 18";
-                }
-            }
-        } else if (dim[0] <= 18.75) {
-            if (dim[1] <= 17) {
-                if (dim[2] <= 5) {
-                    box_size = "18.75 x 16.875 x 5";
-                }
-            }
-        } else if (dim[0] <= 20) {
-            if (dim[1] <= 12) {
-                if (dim[2] <= 12) {
-                    box_size = "20 x 12 x 12";
-                }
-            } else if (dim[1] <= 14) {
-                if (dim[2] <= 4) {
-                    box_size = "20 x 14 x 4";
-                }
-            } else if (dim[1] <= 15) {
-                if (dim[2] <= 15) {
-                    box_size = "20 x 15 x 15";
-                }
-            } else if (dim[1] <= 20) {
-                if (dim[2] <= 12) {
-                    box_size = "20 x 20 x 12";
-                } else if (dim[2] <= 20) {
-                    box_size = "20 x 20 x 20";
-                }
-            }
-        } else if (dim[0] <= 22) {
-            if (dim[1] <= 14) {
-                if (dim[2] <= 12) {
-                    box_size = "22 x 14 x 12";
-                }
-            } else if (dim[1] <= 22) {
-                if (dim[2] <= 8) {
-                    box_size = "22 x 22 x 8";
-                } else if (dim[2] <= 22) {
-                    box_size = "22 x 22 x 22";
-                }
-            }
-        }
-        //24
-        else if (dim[0] <= 24) {
-            if (dim[1] <= 14) {
-                if (dim[2] <= 12) {
-                    box_size = "24 x 14 x 12";
-                }
-            } else if (dim[1] <= 18) {
-                if (dim[2] <= 6) {
-                    box_size = "24 x 6 x 18";
-                } else if (dim[2] <= 12) {
-                    box_size = "24 x 18 x 12";
-                } else if (dim[2] <= 18) {
-                    box_size = "24 x 18 x 18";
-                }
-            } else if (dim[1] <= 20.5) {
-                if (dim[2] <= 4) {
-                    box_size = "24 x 4 x 20.5";
-                }
-            } else if (dim[1] <= 24) {
-                if (dim[2] <= 16) {
-                    box_size = "24 x 24 x 16";
-                } else if (dim[2] <= 24) {
-                    box_size = "24 x 24 x 24";
-                }
-            }
-        }
-        //25
-        else if (dim[0] <= 25) {
-            if (dim[1] <= 25) {
-                if (dim[2] <= 25) {
-                    box_size = "25 x 25 x 25";
-                }
-            }
-        }
-        //26
-        else if (dim[0] <= 26) {
-            if (dim[1] <= 16) {
-                if (dim[2] <= 12) {
-                    box_size = "26 x 26 x 12";
-                }
-            } else if (dim[1] <= 18) {
-                if (dim[2] <= 8) {
-                    box_size = "26 x 18 x 8";
-                }
-            } else if (dim[1] <= 20) {
-                if (dim[2] <= 20) {
-                    box_size = "26 x 20 x 20";
-                }
-            }
-        }
-        //30
-        else if (dim[0] <= 30) {
-            if (dim[1] <= 17) {
-                if (dim[2] <= 16) {
-                    box_size = "30 x 17 x 16";
-                }
-            } else if (dim[1] <= 24) {
-                if (dim[2] <= 6) {
-                    box_size = "30 x 6 x 24";
-                }
-            } else if (dim[1] <= 30) {
-                if (dim[2] <= 18) {
-                    box_size = "30 x 30 x 18";
-                }
-            }
-        } else if (dim[0] <= 31) {
-            if (dim[1] <= 24) {
-                if (dim[2] <= 10) {
-                    box_size = "31 x 10 x 24";
-                }
-            }
-        }
-        //36
-        else if (dim[0] <= 36) {
-            if (dim[1] <= 16) {
-                if (dim[2] <= 16) {
-                    box_size = "36 x 16 x 16";
-                }
-            } else if (dim[1] <= 24) {
-                if (dim[2] <= 10) {
-                    box_size = "36 x 24 x 10";
-                }
-            } else if (dim[1] <= 30) {
-                if (dim[2] <= 7) {
-                    box_size = "36 x 7 x 30";
-                }
-            }
+//New Method - Finds the SMALLEST box now instead of the first one it fits
 
+        var box = [];
+
+        var skipped = new Array(3);
+        var total_dim = 1000;
+        var skip_i = 0;
+        var chosen_box = -1;
+        
+
+        //Populate box with dimensions from sheet - can be out of order
+//remove  There's got to be a better way to do this lol
+        //Cube
+        box[0] = [6, 6, 6];
+        box[1] = [8, 8, 8];
+        box[2] = [10, 10, 10];
+        box[3] = [12, 12, 12];
+        box[4] = [14, 14, 14];
+        box[5] = [16, 16, 16];
+        box[6] = [18, 18, 18];
+        box[7] = [20, 20, 20];
+        box[8] = [22, 22, 22];
+        box[9] = [24, 24, 24];
+        box[10] = [25, 25, 25];
+        // < 20in
+        box[11] = [11.75, 8.75, 4.75];
+        box[12] = [12, 8, 8];
+        box[13] = [12, 9, 3];
+        box[14] = [12, 12, 6];
+        box[15] = [13, 11 ,5];
+        box[16] = [15, 12, 10];
+        box[17] = [16, 12, 12];
+        box[18] = [16, 16, 4];
+        box[19] = [17, 11, 8];
+        box[20] = [17, 17, 8];
+        box[21] = [18, 12, 12];
+        box[22] = [18, 16, 14];
+        box[23] = [18, 18, 12];
+        box[24] = [18.75, 16.875, 5];
+        //Longs
+        box[25] = [6, 6, 48];
+        box[26] = [8, 8, 42];
+        box[27] = [10, 10, 50];
+        box[28] = [14, 14, 47];
+        box[29] = [20, 10, 50]; //Guitar
+        // > 20in
+        box[30] = [20, 12, 12];
+        box[31] = [20, 14, 4];
+        box[32] = [20, 15, 15];
+        box[33] = [20, 20, 12];
+        box[34] = [22, 14, 12];
+        box[35] = [22, 22, 8];
+        box[36] = [24, 14, 12];
+        box[37] = [24, 18, 12];
+        box[38] = [24, 18, 18];
+        box[39] = [24, 24, 16];
+        box[40] = [26, 16, 12];
+        box[41] = [26, 18, 8];
+        box[42] = [26, 20, 20];
+        box[43] = [30, 17, 16];
+        box[44] = [30, 30, 18];
+        box[45] = [36, 24, 10];
+        box[46] = [36, 16, 16];
+        box[47] = [38, 12 ,32];
+        //Picture
+        box[48] = [24, 4, 20.5];
+        box[49] = [24, 6, 18];
+        box[50] = [24, 10, 31]; //Suitcase
+        box[51] = [30, 6, 24];
+        box[52] = [36, 7, 30];
+        box[53] = [44, 6, 36];
+        box[54] = [52, 8, 30];
+
+
+        //Sort new array
+        for(var a = 0; a < box.length; a++) {
+            box[a].sort(function(a, b){return b-a});
         }
-        //38
-        else if (dim[0] <= 38) {
-            if (dim[1] <= 32) {
-                if (dim[2] <= 12) {
-                    box_size = "38 x 32 x 12";
-                }
-            }
-        } else if (dim[0] <= 44) {
-            if (dim[1] <= 36) {
-                if (dim[2] <= 6) {
-                    box_size = "44 x 6 x 36";
-                }
-            }
-        } else if (dim[0] <= 52) {
-            if (dim[1] <= 30) {
-                if (dim[2] <= 8) {
-                    box_size = "52 x 8 x 30";
-                }
+
+        //Find the smallest box it will fit in
+        for(var i = 0; i < box.length; i++) {
+            if ( (dim[0] <= box[i][0] && dim[1] <= box[i][1] && dim[2] <= box[i][2]) && (box[i][0] + box[i][1] + box[i][2] < total_dim) && (i !== skipped[0] && i !== skipped[1] && i !== skipped[2] ) ) {
+                chosen_box = i;
+                total_dim = box[i][0] + box[i][1] + box[i][2];
+                skipped[skip_i] = i;
+                skip_i ++;
             }
         }
 
-        if(box_size === "na") {
-            for (var j = 0; j < dim.length; j++) {
-                dim[j] += 1;
-            }
-            i++;
+        if(chosen_box === -1) {
+            window.alert("Unable to find box size.\nContact a manager.");
         }
         else {
-            i = 10;
+            window.alert("Box size needed: \n" + box[chosen_box][0] + " x " + box[chosen_box][1] + " x " + box[chosen_box][2]);
         }
-    }
 
-    if(box_size === "na") {
-        window.alert("Unable to find box size.\nContact a manager.");
-    }
-    else {
-        window.alert("Box size needed: \n" + box_size);
-    }
+
+
+
+
+
+
+
+    // /*
+    //     IF block to determine the best box to use
+    //
+    //     Goes in order from smallest to largest based
+    //  */
+    // var i = 0;
+    // while(i < 3) {
+    //     if (dim[0] <= 6) {
+    //         if (dim[2] <= 6) {
+    //             box_size = "6 x 6 x 6";
+    //         } else if (dim[2] <= 50) {
+    //             box_size = "6 x 6 x 50";
+    //         }
+    //     } else if (dim[0] <= 8) {
+    //         if (dim[1] <= 8) {
+    //             if (dim[2] <= 8) {
+    //                 box_size = "8 x 8 x 8";
+    //             } else if (dim[2] <= 42) {
+    //                 box_size = "8 x 8 x 42";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 10) {
+    //         if (dim[1] <= 10) {
+    //             if (dim[2] <= 10) {
+    //                 box_size = "10 x 10 x 10";
+    //             } else if (dim[2] <= 50) {
+    //                 box_size = "10 x 10 x 50";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 11.75) {
+    //         if (dim[1] <= 8.75) {
+    //             if (dim[2] <= 4.75) {
+    //                 box_size = "11.75 x 8.75 x 4.75";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 12) {
+    //         if (dim[1] <= 8) {
+    //             if (dim[2] <= 8) {
+    //                 box_size = "12 x 8 x 8";
+    //             }
+    //         } else if (dim[1] <= 9) {
+    //             if (dim[2] <= 3) {
+    //                 box_size = "12 x 9 x 3";
+    //             }
+    //         } else if (dim[1] <= 12) {
+    //             if (dim[2] <= 6) {
+    //                 box_size = "12 x 12 x 6";
+    //             } else if (dim[2] <= 12) {
+    //                 box_size = "12 x 12 x 12";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 13) {
+    //         if (dim[1] <= 11) {
+    //             if (dim[2] <= 5) {
+    //                 box_size = "13 x 11 x 5";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 14) {
+    //         if (dim[1] <= 14) {
+    //             if (dim[2] <= 14) {
+    //                 box_size = "14 x 14 x 14";
+    //             } else if (dim[2] <= 14) {
+    //                 box_size = "14 x 14 x 47";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 15) {
+    //         if (dim[1] <= 12) {
+    //             if (dim[2] <= 10) {
+    //                 box_size = "15 x 12 x 10";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 16) {
+    //         if (dim[1] <= 12) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "16 x 12 x 12";
+    //             }
+    //         } else if (dim[1] <= 16) {
+    //             if (dim[2] <= 4) {
+    //                 box_size = "16 x 16 x 4";
+    //             } else if (dim[2] <= 16) {
+    //                 box_size = "16 x 16 x 16";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 17) {
+    //         if (dim[1] <= 11) {
+    //             if (dim[2] <= 8) {
+    //                 box_size = "17 x 11 x 8";
+    //             }
+    //         }
+    //         if (dim[1] <= 17) {
+    //             if (dim[2] <= 8) {
+    //                 box_size = "17 x 17 x 8";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 18) {
+    //         if (dim[1] <= 12) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "18 x 12 x 12";
+    //             }
+    //         } else if (dim[1] <= 16) {
+    //             if (dim[2] <= 14) {
+    //                 box_size = "18 x 16 x 14";
+    //             }
+    //         } else if (dim[1] <= 18) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "18 x 18 x 12";
+    //             } else if (dim[2] <= 18) {
+    //                 box_size = "18 x 18 x 18";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 18.75) {
+    //         if (dim[1] <= 17) {
+    //             if (dim[2] <= 5) {
+    //                 box_size = "18.75 x 16.875 x 5";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 20) {
+    //         if (dim[1] <= 12) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "20 x 12 x 12";
+    //             }
+    //         } else if (dim[1] <= 14) {
+    //             if (dim[2] <= 4) {
+    //                 box_size = "20 x 14 x 4";
+    //             }
+    //         } else if (dim[1] <= 15) {
+    //             if (dim[2] <= 15) {
+    //                 box_size = "20 x 15 x 15";
+    //             }
+    //         } else if (dim[1] <= 20) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "20 x 20 x 12";
+    //             } else if (dim[2] <= 20) {
+    //                 box_size = "20 x 20 x 20";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 22) {
+    //         if (dim[1] <= 14) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "22 x 14 x 12";
+    //             }
+    //         } else if (dim[1] <= 22) {
+    //             if (dim[2] <= 8) {
+    //                 box_size = "22 x 22 x 8";
+    //             } else if (dim[2] <= 22) {
+    //                 box_size = "22 x 22 x 22";
+    //             }
+    //         }
+    //     }
+    //     //24
+    //     else if (dim[0] <= 24) {
+    //         if (dim[1] <= 14) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "24 x 14 x 12";
+    //             }
+    //         } else if (dim[1] <= 18) {
+    //             if (dim[2] <= 6) {
+    //                 box_size = "24 x 6 x 18";
+    //             } else if (dim[2] <= 12) {
+    //                 box_size = "24 x 18 x 12";
+    //             } else if (dim[2] <= 18) {
+    //                 box_size = "24 x 18 x 18";
+    //             }
+    //         } else if (dim[1] <= 20.5) {
+    //             if (dim[2] <= 4) {
+    //                 box_size = "24 x 4 x 20.5";
+    //             }
+    //         } else if (dim[1] <= 24) {
+    //             if (dim[2] <= 16) {
+    //                 box_size = "24 x 24 x 16";
+    //             } else if (dim[2] <= 24) {
+    //                 box_size = "24 x 24 x 24";
+    //             }
+    //         }
+    //     }
+    //     //25
+    //     else if (dim[0] <= 25) {
+    //         if (dim[1] <= 25) {
+    //             if (dim[2] <= 25) {
+    //                 box_size = "25 x 25 x 25";
+    //             }
+    //         }
+    //     }
+    //     //26
+    //     else if (dim[0] <= 26) {
+    //         if (dim[1] <= 16) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "26 x 26 x 12";
+    //             }
+    //         } else if (dim[1] <= 18) {
+    //             if (dim[2] <= 8) {
+    //                 box_size = "26 x 18 x 8";
+    //             }
+    //         } else if (dim[1] <= 20) {
+    //             if (dim[2] <= 20) {
+    //                 box_size = "26 x 20 x 20";
+    //             }
+    //         }
+    //     }
+    //     //30
+    //     else if (dim[0] <= 30) {
+    //         if (dim[1] <= 17) {
+    //             if (dim[2] <= 16) {
+    //                 box_size = "30 x 17 x 16";
+    //             }
+    //         } else if (dim[1] <= 24) {
+    //             if (dim[2] <= 6) {
+    //                 box_size = "30 x 6 x 24";
+    //             }
+    //         } else if (dim[1] <= 30) {
+    //             if (dim[2] <= 18) {
+    //                 box_size = "30 x 30 x 18";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 31) {
+    //         if (dim[1] <= 24) {
+    //             if (dim[2] <= 10) {
+    //                 box_size = "31 x 10 x 24";
+    //             }
+    //         }
+    //     }
+    //     //36
+    //     else if (dim[0] <= 36) {
+    //         if (dim[1] <= 16) {
+    //             if (dim[2] <= 16) {
+    //                 box_size = "36 x 16 x 16";
+    //             }
+    //         } else if (dim[1] <= 24) {
+    //             if (dim[2] <= 10) {
+    //                 box_size = "36 x 24 x 10";
+    //             }
+    //         } else if (dim[1] <= 30) {
+    //             if (dim[2] <= 7) {
+    //                 box_size = "36 x 7 x 30";
+    //             }
+    //         }
+    //
+    //     }
+    //     //38
+    //     else if (dim[0] <= 38) {
+    //         if (dim[1] <= 32) {
+    //             if (dim[2] <= 12) {
+    //                 box_size = "38 x 32 x 12";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 44) {
+    //         if (dim[1] <= 36) {
+    //             if (dim[2] <= 6) {
+    //                 box_size = "44 x 6 x 36";
+    //             }
+    //         }
+    //     } else if (dim[0] <= 52) {
+    //         if (dim[1] <= 30) {
+    //             if (dim[2] <= 8) {
+    //                 box_size = "52 x 8 x 30";
+    //             }
+    //         }
+    //     }
+    //
+    //     if(box_size === "na") {
+    //         for (var j = 0; j < dim.length; j++) {
+    //             dim[j] += 1;
+    //         }
+    //         i++;
+    //     }
+    //     else {
+    //         i = 10;
+    //     }
+    // }
+    //
+    //
+    //
+    // if(box_size === "na") {
+    //     window.alert("Unable to find box size.\nContact a manager.");
+    // }
+    // else {
+    //     window.alert("Box size needed: \n" + box_size);
+    // }
 
 
     return true;
