@@ -106,7 +106,7 @@ var findBox = function() {
         var total_dim = 1000;
         var skip_i = 0;
         var chosen_box = -1;
-        
+
 
         //Populate box with dimensions from sheet - can be out of order
 //remove  There's got to be a better way to do this lol
