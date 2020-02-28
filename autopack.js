@@ -266,7 +266,7 @@ var findBox = function() {
                 }
             } else if (dim[1] <= 24) {
                 if (dim[2] <= 16) {
-                    box_size = "24 x 24 x 26";
+                    box_size = "24 x 24 x 16";
                 } else if (dim[2] <= 24) {
                     box_size = "24 x 24 x 24";
                 }
