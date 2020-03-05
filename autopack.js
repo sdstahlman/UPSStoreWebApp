@@ -10,6 +10,9 @@ window.onload = function () {
             //window.location.href = 'https://webpages.uncc.edu/sstahlm1/Project/autopackcomplete.html';
         }
     });
+
+    // This line causes the inputs to show in address bar - Do not like
+    // $("pack_submit").onclick = findBox;
 };
 
 
