@@ -56,16 +56,14 @@ nav ul li a img
 
 body
 {
+    display: flex;
     font-family: "arial", serif;
     width: 100%;
     background-color: aqua;
+    flex-direction: column;
 
 }
 
-footer
-{
-
-}
 
 .storeAddress {
     text-align: left;
@@ -84,6 +82,20 @@ footer
     background-color: white;
     height: 100%;
 }
+
+.container .footer{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    padding-right: 5vw;
+    padding-left: 5vw;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1200px;
+    background-color: white;
+
+}
+
 
 @media (max-width: 767px) {
     .container {
