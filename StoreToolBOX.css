@@ -36,7 +36,8 @@ nav ul li a
 {
 
     text-align: center;
-    padding: 16px;
+    justify-content: center;
+    padding: 20%;
     text-decoration: none;
     width: 100%;
     color: black;
@@ -101,26 +102,32 @@ select {
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
     padding-right: 5vw;
     padding-left: 5vw;
     margin-right: auto;
     margin-left: auto;
-    max-width: 1200px;
+    width: 1200px;
     background-color: white;
     height: 100%;
+    min-height: 100vh;
 }
 
-.container .footer{
-    width: 100%;
+.footer_parent {
+    display: flex;
+    align-items: center;
     position: fixed;
     bottom: 0;
-    padding-right: 5vw;
-    padding-left: 5vw;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1200px;
-    background-color: white;
+    justify-content: center;
+    width: 100%;
+}
 
+.footer_child{
+    padding-left: 5vw;
+    padding-right: 5vw;
+    background-color: #0087a4;
+    width: 1200px;
 }
 
 
