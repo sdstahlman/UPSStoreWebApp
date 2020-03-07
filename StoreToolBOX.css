@@ -73,7 +73,7 @@ input {
     background: #f1f1f1;
 }
 
-#pack_submit {
+#pack_submit, #amz_submit {
     width: 92%;
     padding: 15px;
     margin: 5px 0 22px 0;
