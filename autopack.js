@@ -1,33 +1,28 @@
-//Declare $ function
-var $ = function (id) { return document.getElementById(id); };
-window.onload = function () {
-    document.getElementById("itemInfo").addEventListener('submit', function(e) {
-        e.preventDefault();
-        if(findBox()) {
-            //window.location.href = 'https://webpages.uncc.edu/sstahlm1/Project/autopackcomplete.html';
-        }
+
+$(document).ready(function() {
+    $('#pack_submit').click( function (evt) {
+        evt.preventDefault();
+        //alert("hello");
+        findBox();
+
     });
 
-    // This line causes the inputs to show in address bar - Do not like
-    // $("pack_submit").onclick = findBox;
-};
+});
 
 
 var findBox = function() {
-    var itemInfo = $("itemInfo");
-    var length = itemInfo.lengthDim.value;
-    var height = itemInfo.heightDim.value;
-    var weight = itemInfo.weight.value;
-    var width = itemInfo.widthDim.value;
-    var pack_type = $("pack_type").value;
+    var length = $('#lengthDim').val();
+    var height = $('#heightDim').val();
+    var width = $('#widthDim').val();
+    var weight = $('#weight').val();
+    var pack_type = $("#pack_type").children("option:selected").val();
+
     //Convert length inputs to floats in order to do functions later
     length = parseFloat(length);
     height = parseFloat(height);
     width = parseFloat(width);
-    //Convert length inputs to floats in order to do functions later
-    length = parseFloat(length);
-    height = parseFloat(height);
-    width = parseFloat(width);
+    //alert(length + "?" + height + "?" + width);
+
 
     //Round weight up to the nearest whole pound
     //NOTE: UPS Requires all weights to round UP to a whole pound
