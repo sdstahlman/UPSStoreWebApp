@@ -1,6 +1,5 @@
-
-
-
+//Declare $ function
+var $ = function (id) { return document.getElementById(id); };
 window.onload = function () {
     document.getElementById("itemInfo").addEventListener('submit', function(e) {
         e.preventDefault();
@@ -14,14 +13,17 @@ window.onload = function () {
 };
 
 
-
 var findBox = function() {
-    var length = $("#lengthDim").val();
-    var height = $("#heightDim").val();
-    var weight = $("#weight").val();
-    var width = $("#widthDim").val();
-    var pack_type = $("#pack_type").val();
-
+    var itemInfo = $("itemInfo");
+    var length = itemInfo.lengthDim.value;
+    var height = itemInfo.heightDim.value;
+    var weight = itemInfo.weight.value;
+    var width = itemInfo.widthDim.value;
+    var pack_type = $("pack_type").value;
+    //Convert length inputs to floats in order to do functions later
+    length = parseFloat(length);
+    height = parseFloat(height);
+    width = parseFloat(width);
     //Convert length inputs to floats in order to do functions later
     length = parseFloat(length);
     height = parseFloat(height);
