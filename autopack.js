@@ -129,7 +129,7 @@ var findBox = function() {
 
 
         //Populate box with dimensions from sheet - can be out of order
-//remove  There's got to be a better way to do this lol
+
         //Cube
         box[0] = [6, 6, 6];
         box[1] = [8, 8, 8];
