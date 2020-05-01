@@ -73,7 +73,7 @@ input {
     background: #f1f1f1;
 }
 
-#pack_submit, #amz_submit {
+#pack_submit, #amz_submit. #send_contact {
     width: 92%;
     padding: 15px;
     margin: 5px 0 22px 0;
@@ -82,6 +82,7 @@ input {
     color: black;
     background-color: #0087a4;
 }
+
 
 select {
     width: 70%;
@@ -93,12 +94,12 @@ select {
 }
 
 
-.storeAddress {
+.store_contact {
     text-align: left;
 }
 
-.designContact {
-    text-align: right;
+.design_contact {
+    text-align: left;
 }
 
 .container {

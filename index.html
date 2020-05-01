@@ -6,6 +6,14 @@
     <title>ToolBOX</title>
     <!--Stylesheet -->
     <link rel="stylesheet" type="text/css" href="StoreToolBOX.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+    <link href="bxslider/jquery.bxslider.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="bxslider/jquery.bxslider.min.js"></script>
+    <script src="index.js"></script>
 
 
 </head>
@@ -42,10 +50,28 @@
 
     <main>
         <h1>Welcome to the Toolbox!</h1>
+
+
         <h2>About</h2>
         <p>This website was designed and created by Scott Stahlman for The UPS Store #2078.</p>
         <p>Key features include an auto-packer which decides the best box for your given item and an Amazon Master Carton tool which speeds up the process of receiving payment for missed Amazon consolidated containers.</p>
         <p>For more information, feel free to contact us. Links to prefered contact are located on the 'Contact us' page.</p>
+
+
+
+        <div id="itemsShipped">
+
+            <h2>Featured Past Shipments:</h2>
+
+            <ul id="slider">
+                <li><img src="images/antique_furniture_set_01.jpg" alt="" title="Antique Furniture Collection"></li>
+                <li><img src="images/large_painting_01.jpg" alt="" title="Large Painting"></li>
+                <li><img src="images/drag_car_rear_01.jpg" alt="" title="Drag Car Rear End"></li>
+            </ul>
+            <p id="pager"></p>
+
+        </div>
+
     </main>
     </div>
 
@@ -56,7 +82,6 @@
     </footer>
     </div>
 
-    <script src="index.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </body>
 </html>

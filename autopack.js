@@ -1,11 +1,34 @@
 
 $(document).ready(function() {
+
+
+    //jQuery Validator Plugin
+    $('#itemInfo').validate( {
+        rules: {
+            weight: "required",
+            lengthDim: "required",
+            widthDim: "required",
+            heightDim: "required",
+        },
+        messages: {
+            weight: " A weight is required.",
+            lengthDim: " Please enter a length",
+            widthDim: " Please enter a width",
+            heightDim: " Please enter a height"
+        }
+
+    });
+
+
     $('#pack_submit').click( function (evt) {
         evt.preventDefault();
         //alert("hello");
         findBox();
 
     });
+
+
+
 
 });
 

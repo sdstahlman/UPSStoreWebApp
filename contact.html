@@ -6,6 +6,15 @@
     <title>ToolBOX</title>
     <!--Stylesheet -->
     <link rel="stylesheet" type="text/css" href="StoreToolBOX.css">
+    <link rel="stylesheet" href="jquery-ui-1.12.1.custom/jquery-ui.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="contact.js"></script>
+
+
+
+
 </head>
 <body>
     <div class="container">
@@ -39,24 +48,56 @@
     </header>
 
      <main>
-         <div class="storeAddress">
-         <p>
-            Logan Burk<br>
-            The UPS Store #2078<br>
-            516D River Hwy<br>
-            Mooresville, NC 28117<br>
-            <a href="mailto: store2078@theupsstore.com">store2078@theupsstore.com</a><br>
-            (704) 663 - 8833
-         </p>
+         <div id="accordion">
+
+             <h2>Website Designer / Creator</h2>
+             <div class="design_contact">
+
+                 <p>
+                     Scott Stahlman<br>
+                     Computer Science Student at UNC Charlotte<br>
+                     <a href="mailto: sdstahlman@gmail.com">sdstahlman@gmail.com</a>
+                 </p>
+
+
+             </div>
+
+             <h2>Store Owner</h2>
+             <div class="store_contact">
+                 <p>
+                     Logan Burk<br>
+                     The UPS Store #2078<br>
+                     516D River Hwy<br>
+                     Mooresville, NC 28117<br>
+                     <a href="mailto: store2078@theupsstore.com">store2078@theupsstore.com</a><br>
+                     (704) 663 - 8833
+                 </p>
+             </div>
+
+
+
+                 <h2>Contact Us</h2>
+
+                 <div class="directContact">
+
+
+                 <form id="sendContact">
+
+                     <p>
+                         <label for="contactInput"></label>
+                         <textarea id="contactInput" rows="6" cols="80"></textarea>
+                     </p>
+
+
+                     <!-- Submit Button -->
+                     <input type="submit" value="Contact" id="send_contact">
+
+                 </form>
+
+             </div>
          </div>
 
-         <div class="designContact">
-             <p>
-                 Scott Stahlman<br>
-                 Computer Science Student at UNC Charlotte<br>
-                 <a href="mailto: sdstahlman@gmail.com">sdstahlman@gmail.com</a>
-             </p>
-         </div>
+
      </main>
 
 
