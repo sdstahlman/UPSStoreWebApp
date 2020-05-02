@@ -36,8 +36,8 @@ var carton_work = function () {
             $.getJSON("json/amazonmaster.json", function(data) {
                 $.each(data, function () {
                     $.each(this, function (key, value) {
-                        payload_in = value.payload;
-                        //payload_in = $("#amz_string").val();
+                        //payload_in = value.payload;
+                        payload_in = $("#amz_string").val();
 
                         $("#amazon_result").append(
                             "<h2>" + value.month + " " + value.year + "</h2>" +
