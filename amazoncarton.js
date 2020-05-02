@@ -39,10 +39,10 @@ var carton_work = function () {
                         //payload_in = value.payload;
                         payload_in = $("#amz_string").val();
 
-                        $("#amazon_result").append(
-                            "<h2>" + value.month + " " + value.year + "</h2>" +
-                            "<h3>Manager: " + value.manager + "</h3>"
-                        );
+                        // $("#amazon_result").append(
+                        //     "<h2>" + value.month + " " + value.year + "</h2>" +
+                        //     "<h3>Manager: " + value.manager + "</h3>"
+                        // );
 
                         //Do work on payload
                         var tracking = [];
@@ -61,6 +61,8 @@ var carton_work = function () {
                         }
 
                         //alert(tracking.length);
+
+                        $("#amazon_result").append("<h2>Tracking Report:</h2>");
 
 
                         $("#amazon_result").append("<p>");
