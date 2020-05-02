@@ -83,6 +83,9 @@ input {
     background-color: #0087a4;
 }
 
+#pager {
+    text-align: center;
+}
 
 select {
     width: 70%;
